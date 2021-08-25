@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* universal classes to apply to rest of html */
+
+
+/*utilities*/
 section {
     padding: 60px;
 }
@@ -16,7 +18,10 @@ section {
     text-align: right;
 }
 
-/* end of unviversal classes to apply */
+.flex-row {
+    display: flex;
+}
+/*end utilities*/
 
 body {
    
@@ -56,7 +61,7 @@ body {
 
 .hero-form {
     color: #024e76;
-    background-color: #fce138;
+    background-color: rgb(253, 225, 56, 0.8);
     padding: 20px;
     border-style: solid;
     border-radius: 15px;
@@ -166,6 +171,54 @@ header nav ul li a:hover {
     color: #024e76;
     border-radius: 15px;
     text-shadow: none;
+}
+
+.checkbox-wrapper input, .radio-wrapper input {
+    opacity: 0;
+}
+
+.checkbox-wrapper label, .radio-wrapper label {
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    line-height: 1.6;
+}
+
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid #024e76;
+    position: absolute;
+    top: -4px;
+    left: -30px;
+}
+
+.radio-wrapper label::before {
+    border-radius: 50%;
+}
+
+.radio-wrapper label::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #024e76;
+    position: absolute;
+    left: -29px;
+    top: -3px;
+}
+
+.checkbox-wrapper label::after {
+    content: "";
+    height: 6px; 
+    width: 14px;
+    border-left: 2px solid #024e76;
+    border-bottom: 2px solid #024e76;
+    position: absolute; 
+    left: -26px;
+    top: 1px;
 }
 
 /*header style end*/
@@ -384,6 +437,7 @@ header nav ul li a:hover {
 
 /* Reach out styles end */
 
+/*footer style start*/
 footer {
     display: flex;
     justify-content: space-between;
@@ -407,10 +461,7 @@ footer div {
 footer a {
     color: #024e76;
 }
-
-.flex-row {
-    display: flex;
-}
+/*footer style ends*/
 
 /*MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER*/
 @media screen and (max-width: 980px) {
@@ -428,7 +479,7 @@ footer a {
 
     header nav ul {
         margin-top: 20px;
-        width: 100;
+        width: 100%;
         justify-content: center;
     }
 
